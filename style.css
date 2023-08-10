@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+:root{
+    /* Primary */
+    --Tomato: hsl(4, 100%, 67%);
+
+    /* Neutral */
+    --DarkSlateGrey: hsl(234, 29%, 20%);
+    --CharcoalGrey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+}
+body{
+    background: var(--DarkSlateGrey);
+}
+.main-form{
+    background: var(--White);
+    display: flex;
+    flex-direction: column;
+}
+.hero-container{
+    order: 1;
+}
+.info-container{
+    order: 2;
+    padding: 20px;
+}
+.info-container h1{
+    font-size: 2rem;
+    color: var(--DarkSlateGrey);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.info-container p, ul{
+    color: var(--CharcoalGrey);
+    line-height: 25px;
+}
+
+.info-container ul{
+    list-style-image: url("./assets/images/icon-list.svg");
+    padding: 14px 0 0    28px;
+    align-items: center;
+}
+.info-container form p{
+    color: var(--DarkSlateGrey);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 10px 0;
+}
+.input{
+    border: 1px solid var(--Grey);
+    outline: none;
+    background: transparent;
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+/* Error display */
+.error{
+    border: 1px solid var(--Tomato);
+    outline: none;
+    background: #ffe8e6;
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;    
+}
+.error::placeholder{
+    color: var(--Tomato);
+}
+
+.info-container form button{
+    border: 0;
+    outline: 0;
+    background: var(--DarkSlateGrey);
+    color: var(--White);
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.info-container form button:hover{
+    background: var(--Tomato);
+    box-shadow: 0 10px 10px rgba(255, 95, 83, 0.6);
+    transition: 0.5s;
+}
+.info-container form div{
+    display: flex;
+    justify-content: space-between;
+}
+#error-text{
+    display: none;
+    color: var(--Tomato);
+}
+.attribution{
+    background: var(--White);
+}
+
+/*  Success message start   */
+
+.hidden{
+    display: none;
+}
+
+.success{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    background: var(--White);
+    padding: 0 25px;
+}
+.success img{
+    width: 60px;
+    margin: 20px 0;
+}
+.success h2{
+    font-size: 2rem;
+    color: var(--DarkSlateGrey);
+    font-weight: 700;
+    margin: 20px 0;
+}
+.success p{
+    color: var(--DarkSlateGrey);
+    font-weight: 400;
+    line-height: 25px;
+}
+.success p span{
+    font-weight: 700;
+}
+
+.success button{
+    margin-top: 100px;
+    border: 0;
+    outline: 0;
+    background: var(--DarkSlateGrey);
+    color: var(--White);
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    bottom: 0;
+}
+.success button:hover{
+    background: var(--Tomato);
+    box-shadow: 0 10px 10px rgba(255, 95, 83, 0.6);
+    transition: 0.5s;
+}
+
+@media (min-width: 500px){
+    .main-form{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        max-width: 900px;       
+        height: 80vh;
+        max-height: 500px;
+        padding: 15px;
+        margin: 10vh auto;
+        border-radius: 20px;
+    }
+    .info-container{
+        padding: 20px 80px;
+    }
+    .info-container h1{
+        font-size: 3rem;
+    }
+    .success img{
+        width: 50px;
+        margin: 10px 0;
+    }
+    .success h2{
+        margin: 10px 0;
+    }
+    .success p{
+        line-height: 20px;
+    }
+    .success{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        display: block;
+        padding: 20px 50px;
+        height: auto;
+    }    
+    .success button{
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+}
